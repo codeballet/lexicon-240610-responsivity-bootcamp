@@ -1,0 +1,136 @@
+/* VARIABLES */
+
+:root {
+    --header-color: #480063;
+    --nav-color: #b2008a;
+    --article-color: #fd96a9;
+    --aside-color: #f42dac;
+    --footer-color: #c1c99a;
+}
+
+/* GLOBALS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* LAYOUT - Mobile */
+
+body {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 
+        min-content
+        min-content
+        min-content
+        auto;
+
+    margin: 0.5rem;
+    min-height: 100vh;
+}
+
+header {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100rem;
+    margin: 1rem 0;
+    background-color: var(--header-color);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+nav>ul {
+    list-style: none;
+}
+
+nav>ul>li {
+    height: 4rem;
+    width: 100%;
+    border-radius: 10rem;
+    background-color: var(--nav-color);
+    margin-top: 0.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+main>article>section {
+    background-color: var(--article-color);
+    height: 4rem;
+    margin-top: 0.5rem;
+}
+
+main>aside {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+main>aside>section {
+    background-color: var(--aside-color);
+    height: 4rem;
+    flex: 1;
+}
+
+footer {
+    background-color: #c1c99a;
+    margin-top: 0.5rem;
+    width: 100%;
+    min-height: 5rem;
+    max-height: 7rem;
+}
+
+/* LAYOUT - Desktop */
+
+@media (width > 600px) {
+    header,
+    nav>ul {
+        margin: 1rem;
+    }
+    header {
+        justify-self: start;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+    
+    nav>ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        width: 100%;
+    }
+
+    main {
+        flex-direction: row;
+        padding: 0 5rem 2rem 5rem;
+    }
+
+    main>article {
+        flex: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin-right: 1rem;
+    }
+
+    main>aside {
+        flex: 1;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
